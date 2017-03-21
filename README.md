@@ -26,7 +26,7 @@ $ldap_default_privs = array(
       'statistics' => true,
       'settings' => true
 );
-$ldap_matching_user_base_dn = "ou=People,dc=dolden,dc=net";
+$ldap_matching_user_base_dn = "ou=People,dc=example,dc=com";
 $ldap_matching_user_pattern = "(&(uid=__LOGIN__)(|(uid=her)(uid=him)))";
 $ldap_matching_user_uid_attribute = "uid";
 $ldap_except_users = array('admin');
