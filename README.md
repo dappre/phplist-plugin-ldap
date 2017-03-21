@@ -34,5 +34,6 @@ $ldap_except_users = array('admin');
 
 ## Todo
 - Improve configuration documentation, possibly adding the original example file
+- Add support for LDAP groups
 - Allow configuration from the plugin, if relevant
 - Add [automated test](https://resources.phplist.com/develop/plugin_automated_testing) via Travis CI
