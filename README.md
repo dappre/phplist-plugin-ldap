@@ -5,7 +5,9 @@ It is initialy based on an old patch for phplist_auth.inc submitted by bpeabody 
 And has been reworked to fit the new approach introduced in v3.2.7 as described in [phplist documentation](https://resources.phplist.com/develop/authentication_plugin).
 
 ## Installation
-This plugin is intended to be installable from the [Plugin Manager](https://www.phplist.org/manual/ch042_phplist-plugins.xhtml), as it follows the requirements described in the [documentation](https://resources.phplist.com/develop/plugins#phplist_plugins_and_github)
+This plugin is intended to be installable from the [Plugin Manager](https://www.phplist.org/manual/ch042_phplist-plugins.xhtml), as it follows the requirements described in the [documentation](https://resources.phplist.com/develop/plugins#phplist_plugins_and_github).
+
+Use "Plugin package URL" like https://github.com/digital-me/phplist-plugin-ldap/archive/master.zip should work if the permissions are allowing the installation from the GUI.
 
 ## Configuration
 As described in the initial patch, the configuration has to be defined from the main [configuration file](https://resources.phplist.com/system/config).
