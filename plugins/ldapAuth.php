@@ -24,6 +24,7 @@ class ldapAuth extends phplistPlugin {
   public $enabled = true;
   public $authors = 'Benoit Donneaux, bpeabody and other phpList reporters on Mantis';
   public $description = 'Provides authentication to phpList using LDAP';
+  public $documentationUrl = 'https://github.com/digital-me/phplist-plugin-ldap';
   public $authProvider = true;
 
   function localValidateLogin($login,$password) {
