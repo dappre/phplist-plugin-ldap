@@ -32,6 +32,10 @@ $ldap_matching_user_uid_attribute = "uid";
 $ldap_except_users = array('admin');
 ```
 
+## Known issues
+- [Manage administartors page is read-only](https://github.com/digital-me/phplist-plugin-ldap/issues/1)
+- [Forgot password gets confusing](https://github.com/digital-me/phplist-plugin-ldap/issues/2)
+
 ## Todo
 - Improve configuration documentation, possibly adding the original example file
 - Add support for LDAP groups
