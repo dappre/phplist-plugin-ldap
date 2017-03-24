@@ -20,7 +20,7 @@ require_once dirname(__FILE__).'/../accesscheck.php';
 
 class ldapAuth extends phplistPlugin {
   public $name = 'LDAP Authentication Plugin';
-  public $version = 0.1;
+  public $version = '0.1';
   public $enabled = true;
   public $authors = 'Benoit Donneaux';
   public $description = 'Provides authentication to phpList using LDAP';
