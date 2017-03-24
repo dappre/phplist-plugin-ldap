@@ -7,7 +7,7 @@
  * 
  * @category  phplist
  * @package   ldapAuth
- * @author    Benoit Donneaux
+ * @author    Benoit Donneaux - initial code from bpeabody
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
@@ -22,7 +22,7 @@ class ldapAuth extends phplistPlugin {
   public $name = 'LDAP Authentication Plugin';
   public $version = '0.1';
   public $enabled = true;
-  public $authors = 'Benoit Donneaux';
+  public $authors = 'Benoit Donneaux, bpeabody and other phpList reporters on Mantis';
   public $description = 'Provides authentication to phpList using LDAP';
   public $authProvider = true;
 
