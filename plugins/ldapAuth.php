@@ -35,12 +35,12 @@ class ldapAuth extends phplistPlugin {
     $query = sprintf($query, $GLOBALS['tables']['admin']);
     $req = Sql_Query_Params($query, array($login));
     $admindata = Sql_Fetch_Assoc($req);
-    $encryptedPass = hash(ENCRYPTION_ALGO,$password);
+    $encryptedPass = hash(HASH_ALGO,$password);
     $passwordDB = $admindata['password'];    
     #Password encryption verification.
     if(strlen($passwordDB)<$GLOBALS['hash_length']) { // Passwords are encrypted but the actual is not.
       #Encrypt the actual DB password before performing the validation below.
-      $encryptedPassDB =  hash(ENCRYPTION_ALGO,$passwordDB);
+      $encryptedPassDB =  hash(HASH_ALGO,$passwordDB);
       $query = "update %s set password = '%s' where loginname = ?";
       $query = sprintf($query, $GLOBALS['tables']['admin'], $encryptedPassDB);
       $passwordDB = $encryptedPassDB;
