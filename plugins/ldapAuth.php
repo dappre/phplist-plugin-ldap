@@ -28,33 +28,9 @@ class ldapAuth extends phplistPlugin {
   public $authProvider = true;
 
   function localValidateLogin($login,$password) {
-    $query
-    = ' select password, disabled, id'
-    . ' from %s'
-    . ' where loginname = ?';
-    $query = sprintf($query, $GLOBALS['tables']['admin']);
-    $req = Sql_Query_Params($query, array($login));
-    $admindata = Sql_Fetch_Assoc($req);
-    $encryptedPass = hash(HASH_ALGO,$password);
-    $passwordDB = $admindata['password'];    
-    #Password encryption verification.
-    if(strlen($passwordDB)<$GLOBALS['hash_length']) { // Passwords are encrypted but the actual is not.
-      #Encrypt the actual DB password before performing the validation below.
-      $encryptedPassDB =  hash(HASH_ALGO,$passwordDB);
-      $query = "update %s set password = '%s' where loginname = ?";
-      $query = sprintf($query, $GLOBALS['tables']['admin'], $encryptedPassDB);
-      $passwordDB = $encryptedPassDB;
-      $req = Sql_Query_Params($query, array($login));
-    } 
-    if ($admindata["disabled"]) {
-      return array(0,s("your account has been disabled"));
-    } elseif (#Password validation.
-      !empty($passwordDB) && $encryptedPass == $passwordDB) {
-      return array($admindata['id'],"OK");
-    } else {
-      return array(0,s("incorrect password"));
-    }
-    return array(0,s("Login failed"));
+    require __DIR__.'/../phpListAdminAuthentication.php';
+    $core_admin_auth = new phpListAdminAuthentication();
+    return $core_admin_auth->validateLogin($login,$password);
   }
 
   function getPassword($email) {
