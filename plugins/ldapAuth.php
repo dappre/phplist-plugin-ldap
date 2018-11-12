@@ -16,7 +16,7 @@
  * of admin users.
  */
 
-require_once dirname(__FILE__).'/../accesscheck.php';
+require_once __DIR__.'/../accesscheck.php';
 
 class ldapAuth extends phplistPlugin {
   public $name = 'LDAP Authentication Plugin';
