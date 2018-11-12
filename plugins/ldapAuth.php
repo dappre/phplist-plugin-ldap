@@ -27,6 +27,9 @@ class ldapAuth extends phplistPlugin {
   public $documentationUrl = 'https://github.com/digital-me/phplist-plugin-ldap';
   public $authProvider = true;
 
+  /**
+   * For users in $ldap_except_users this method provides a fallback to the authentication method from phpList core
+   */
   function localValidateLogin($login,$password) {
     require_once __DIR__.'/../phpListAdminAuthentication.php';
     $core_admin_auth = new phpListAdminAuthentication();
