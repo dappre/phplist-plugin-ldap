@@ -28,7 +28,7 @@ class ldapAuth extends phplistPlugin {
   public $authProvider = true;
 
   function localValidateLogin($login,$password) {
-    require __DIR__.'/../phpListAdminAuthentication.php';
+    require_once __DIR__.'/../phpListAdminAuthentication.php';
     $core_admin_auth = new phpListAdminAuthentication();
     return $core_admin_auth->validateLogin($login,$password);
   }
