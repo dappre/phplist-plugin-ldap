@@ -300,6 +300,9 @@ class ldapAuth extends phplistPlugin {
 
     // specify LDAP version protocol
     ldap_set_option($myLdapConn,LDAP_OPT_PROTOCOL_VERSION,$aLdapVer);
+    
+    // Enable LDAP recursive search using root DN.
+    ldap_set_option($myLdapConn, LDAP_OPT_REFERRALS, 0);
 
     // if the connection succeeded
     if ($myLdapConn) {
